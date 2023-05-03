@@ -3,7 +3,7 @@
 Sounds Generator is the generative model originally based off the Dance Diffusion model, edited by Ploy Pruekcharoen and Anika Verma. We use the model to create the piece in Max MSP titled Sounds of the Heart.
 
 ## How To Run the Code
-Download the ploy-and-anika_sound-generator.ipnyb file and follow the steps listed in the notebook. You can download the /sounds/normal.wav and /sounds/arrhythmic.wav to use in the generation part of the notebook. For interpolation, you can download the other environmental sounds such as the jazz, bird-chirp, and storm files.
+Download the ploy-and-anika_sound-generator.ipnyb file and follow the steps listed in the notebook. You can download the /sounds/normal.wav and /sounds/arrhythmia.wav to use in the generation part of the notebook. For interpolation, you can download the other environmental sounds such as the jazz, bird-chirp, and storm files.
 
 ## Data
 We have provided the normal and arrhythmic heartbeat wav files that were used in the generation, along with the sound files used for interpolation. If you have your own ECG files you would like to use, follow the instructions in the ecg-to-wav.ipnyb to first convert the ECG files to .wav files. For the datasets we used, the MIT-BIH Arrhythmia Database can be found [here](https://www.physionet.org/content/mitdb/1.0.0/). The MIT-BIH Normal Sinus Rhythm Database can be found [here](https://www.physionet.org/content/nsrdb/1.0.0/).
@@ -16,7 +16,7 @@ Dance Diffusion is a diffusion model, which is a denoising model. Diffusion mode
 
 maestro-150k is one of six models that is included with Dance Diffusion. It was trained on a subset of piano clips from the [MAESTRO](https://magenta.tensorflow.org/datasets/maestro) dataset, which contains MIDI and audio files of virtuousic piano compositions. 
 
-The model we used is a based off CRASH, which uses a Convolutional 1D neural network. Dance Diffusion further uses U-Net as its backbone. If we had access to the original model, we may have been able to play with changing the input layers and sizes, learning rate, and epochs, rather than using the standard U-Net off-the-shelf that was included in Dance Diffusion.
+The model we used is based off CRASH, which uses a Convolutional 1D neural network. Dance Diffusion further uses U-Net as its backbone. If we had access to the original model, we may have been able to play with changing the input layers and sizes, learning rate, and epochs, rather than using the standard U-Net off-the-shelf that was included in Dance Diffusion.
 
 Since we used a pre-trained model, there were many things we could not tweak. The model we ended up choosing for our audio-visual aspect, maestro-150k, was originally trained on virtuosic piano excerpts and MIDI piano music. Our original plan was to use MIDI files. We were going to use [Music Generator](https://github.com/llSourcell/Music_Generator_Demo) but ran into problems with our MIDI output when we converted the heartbeat files to MIDI. Our output was inconsistent and occasionally silent, and did not resemble heartbeats at all. If we had gotten this to work or had used other input data that translated to MIDI better, we may have been able to take advantage of the fact that our model was trained paritally on MIDI data and may have gotten better results that way. Instead, we had to change the model we used fairly last-minute.
 
